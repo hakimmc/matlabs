@@ -1,0 +1,17 @@
+f = inline('x^3-0.14*cos(x)-10*exp(-x*0.14)','x');
+clc
+baslangic = input('baslangic:');
+h = input('baslangic adimi:');
+a = input('kucultme orani:');
+
+epsilon=0.000001; n=0;
+while h>epsilon
+    if f(baslangic)*f(baslangic+h)<=0
+        h=h*a;
+    else
+        baslangic=baslangic+h;
+    end
+    n=n+1;
+end
+fprintf('iterasyon :%d  hata:%.8f  kok:%.6f',n,h,baslangic);
+

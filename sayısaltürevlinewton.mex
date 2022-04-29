@@ -1,0 +1,13 @@
+clc
+f = inline('x^3-0.14*cos(x)-10*exp(-x*0.14)','x');
+baslangic = input('baslangic:');
+h = input('türev adimi:');
+eps = 0.000001;
+n=0;
+
+while abs(f(baslangic)>eps)
+    fd = (f(baslangic+h)-f(baslangic))/h;
+    baslangic = baslangic - (f(baslangic)/fd);
+    n=n+1;
+end
+fprintf('iterasyon:%d  deger:%.6f \n',n,baslangic);

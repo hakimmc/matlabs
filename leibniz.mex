@@ -1,0 +1,16 @@
+clc
+
+matris = input('matrisi gir');
+
+det = (matris(1,1)*matris(2,2)*matris(3,3)*matris(4,4)) - (matris(1,1)*matris(2,2)*matris(3,4)*matris(4,3)) - (matris(1,1)*matris(2,3)*matris(3,2)*matris(4,4));
+det = det  + (matris(1,1)*matris(2,3)*matris(3,4)*matris(4,2)) + (matris(1,1)*matris(2,4)*matris(3,2)*matris(4,3));
+det = det  - (matris(1,1)*matris(2,4)*matris(3,3)*matris(4,2)) - (matris(1,2)*matris(2,1)*matris(3,3)*matris(4,4)) + (matris(1,2)*matris(2,1)*matris(3,4)*matris(4,3));
+det = det  + (matris(1,2)*matris(2,3)*matris(3,1)*matris(4,4)) - (matris(1,2)*matris(2,3)*matris(3,4)*matris(4,1)) - (matris(1,2)*matris(2,4)*matris(3,1)*matris(4,3));
+det = det  + (matris(1,2)*matris(2,4)*matris(3,3)*matris(4,1)) + (matris(1,3)*matris(2,1)*matris(3,2)*matris(4,4)) - (matris(1,3)*matris(2,1)*matris(3,4)*matris(4,2));
+det = det  - (matris(1,3)*matris(2,2)*matris(3,1)*matris(4,4)) + (matris(1,3)*matris(2,2)*matris(3,4)*matris(4,1)) + (matris(1,3)*matris(2,4)*matris(3,1)*matris(4,2));
+det = det  - (matris(1,3)*matris(2,4)*matris(3,2)*matris(4,1)) - (matris(1,4)*matris(2,1)*matris(3,2)*matris(4,3));
+det = det + (matris(1,4)*matris(2,1)*matris(3,3)*matris(4,2)) + (matris(1,4)*matris(2,2)*matris(3,1)*matris(4,3));
+det = det  - (matris(1,4)*matris(2,2)*matris(3,3)*matris(4,1)) - (matris(1,4)*matris(2,3)*matris(3,1)*matris(4,2)) + (matris(1,4)*matris(2,3)*matris(3,2)*matris(4,1));
+
+fprintf('%.6f',det); 
+

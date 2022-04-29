@@ -1,0 +1,17 @@
+clear
+clc 
+f = inline('x^3-0.14*cos(x)-10*exp(-0.14*x)','x');
+x1=input('x1 değeri:');
+x2=input('x2 degeri:');
+n=0;
+eps=0.00001;
+while abs(x2-x1)>eps
+ mid_deger=0.5*(x1+x2);
+ if f(x1)*f(mid_deger)<=0
+ x2=mid_deger;
+ else
+ x1=mid_deger;
+ end
+ n = n+1;
+end
+fprintf('iterasyon:%d x1:%.6f x2:%.6f',n,x1,x2);

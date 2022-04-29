@@ -1,0 +1,14 @@
+clc
+b = input('baslangic:');
+eps = 0.000001;
+n=0;
+
+f = inline('x^3-0.14*cos(x)-10*exp(-x*0.14)','x');
+fd = inline('3*x^2+0.14*sin(x)+(1.4)*exp(-0.14*x)','x');
+
+
+while abs(f(b)>eps)
+    b = b - (f(b)/fd(b));
+    n = n+1;
+end
+fprintf('iterasyon:%d  deger:%.6f \n',n,b);
